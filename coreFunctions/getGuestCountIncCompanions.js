@@ -20,9 +20,11 @@ const getGuestCountIncCompanions = ({
                 var totalCount = 0
 
                 result.forEach(obj => {
+                    if (obj.attendance == 'will') {
+                        totalCount += 1
+                    }
 
                     if (obj.companions !== '' && obj.attendance == 'will') {
-                        totalCount += 1
                         totalCount += obj.companions.split(',').length
                     }
                 })
